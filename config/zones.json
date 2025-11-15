@@ -35,7 +35,27 @@
             "y": 0,
             "z": 0
           },
-          "maxPlayers": 12
+          "maxPlayers": 12,
+          "hoops": [
+            {
+              "id": "hoop_left",
+              "position": {
+                "x": 207,
+                "y": 3,
+                "z": 0
+              },
+              "direction": "east"
+            },
+            {
+              "id": "hoop_right",
+              "position": {
+                "x": 233,
+                "y": 3,
+                "z": 0
+              },
+              "direction": "west"
+            }
+          ]
         }
       ]
     }

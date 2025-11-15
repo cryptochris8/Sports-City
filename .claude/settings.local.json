@@ -8,11 +8,16 @@
       "mcp__hytopia-mcp__getDocumentation",
       "Bash(git init:*)",
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(npm run dev:*)",
+      "mcp__hytopia-mcp__askQuestion",
+      "Bash(cat:*)",
+      "mcp__hytopia-mcp__search"
     ]
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
+    "topia-helper",
     "hytopia-mcp"
   ]
 }
