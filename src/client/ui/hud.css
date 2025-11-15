@@ -1,0 +1,185 @@
+#hud-root {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  font-family: system-ui, sans-serif;
+  color: #f5f7ff;
+  z-index: 1000;
+}
+
+.hud-root-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.hud-top-banner {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hud-banner-main {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 16px;
+  background: rgba(5, 8, 20, 0.85);
+  border-radius: 999px;
+  border: 1px solid rgba(0, 200, 255, 0.5);
+  box-shadow: 0 0 16px rgba(0, 200, 255, 0.25);
+  backdrop-filter: blur(12px);
+  font-size: 13px;
+}
+
+.hud-banner-icon {
+  font-size: 20px;
+}
+
+.hud-banner-title {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hud-banner-timer {
+  margin-left: 12px;
+  font-weight: 600;
+}
+
+.hud-banner-rank,
+.hud-banner-zone {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.hud-top-right-wrapper {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.hud-mini-scores {
+  background: rgba(5, 8, 20, 0.9);
+  border-radius: 12px;
+  padding: 8px 12px;
+  border: 1px solid rgba(0, 200, 255, 0.35);
+  backdrop-filter: blur(10px);
+  min-width: 120px;
+}
+
+.hud-mini-score-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.hud-bottom-left-wrapper {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+}
+
+.hud-player-card {
+  background: rgba(5, 8, 20, 0.9);
+  border-radius: 16px;
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 200, 255, 0.35);
+  width: 220px;
+  backdrop-filter: blur(10px);
+}
+
+.hud-player-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hud-avatar-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 30%, #00e0ff, #0040ff);
+  font-size: 18px;
+}
+
+.hud-player-rank {
+  font-size: 11px;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.hud-xp-bar {
+  margin-top: 8px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.hud-xp-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #00e0ff, #00ff88);
+  transition: width 0.2s ease-out;
+}
+
+.hud-player-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+.hud-bottom-center-wrapper {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hud-actions-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(5, 8, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 12px;
+}
+
+.hud-action-key {
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 11px;
+}
+
+.hud-action-divider {
+  opacity: 0.5;
+}
+
+.hud-bottom-right-wrapper {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
+.hud-emote-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hud-emote-btn,
+.hud-chat-btn {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(5, 8, 20, 0.9);
+  border: 1px solid rgba(0, 200, 255, 0.35);
+  font-size: 11px;
+}

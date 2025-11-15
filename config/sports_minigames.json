@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "sports": {
+    "basketball": {
+      "challenges": [
+        {
+          "id": "basketball_shooting_60s",
+          "displayName": "60s Spot Shooting",
+          "description": "Score as many points as you can in 60 seconds from marked spots around the court.",
+          "durationSeconds": 60,
+          "xpPerHit": 3,
+          "coinsPerHit": 1,
+          "bonusXpOnFinish": 15,
+          "pointsPerMake": {
+            "layup": 2,
+            "midrange": 2,
+            "three": 3
+          }
+        }
+      ]
+    }
+  }
+}

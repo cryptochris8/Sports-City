@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"Expand-Archive -Path ''hytopia-sports-city.zip'' -DestinationPath ''.'' -Force\")",
+      "Bash(npm install)",
+      "Bash(npx tsc:*)",
+      "mcp__hytopia-mcp__listDocumentation",
+      "mcp__hytopia-mcp__getDocumentation",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "hytopia-mcp"
+  ]
+}

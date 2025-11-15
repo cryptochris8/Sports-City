@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "zones": [
+    {
+      "id": "central_hub_plaza",
+      "type": "hub",
+      "center": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "radius": 80,
+      "spawnPoint": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "id": "court_street",
+      "type": "district_sport_basketball",
+      "center": {
+        "x": 200,
+        "y": 0,
+        "z": 0
+      },
+      "radius": 80,
+      "sportsFields": [
+        {
+          "id": "court_street_full_court_1",
+          "sport": "basketball",
+          "mode": "challenge",
+          "center": {
+            "x": 220,
+            "y": 0,
+            "z": 0
+          },
+          "maxPlayers": 12
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "ranks": [
+    {
+      "id": "rookie",
+      "displayName": "Rookie",
+      "minXp": 0
+    },
+    {
+      "id": "amateur",
+      "displayName": "Amateur",
+      "minXp": 200
+    },
+    {
+      "id": "collegiate",
+      "displayName": "Collegiate",
+      "minXp": 600
+    },
+    {
+      "id": "pro",
+      "displayName": "Pro",
+      "minXp": 1500
+    }
+  ]
+}

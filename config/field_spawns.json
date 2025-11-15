@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "fieldSpawns": {
+    "court_street_full_court_1": {
+      "position": {
+        "x": 220,
+        "y": 0,
+        "z": -12
+      },
+      "rotationY": 90
+    }
+  }
+}
