@@ -12,6 +12,7 @@ import {
   DefaultPlayerEntity,
   PlayerEvent,
   PlayerUIEvent,
+  ModelRegistry,
   type World,
   type Player,
 } from 'hytopia';
@@ -24,6 +25,14 @@ import { ChallengeSystem } from './src/server/systems/challenge-system';
 import { BasketballLogic } from './src/server/sports/basketball-logic';
 import { UiMessageHandler } from './src/server/ui-message-handler';
 import { TriggerSystem } from './src/server/systems/trigger-system';
+import { BasketballHoopEntity } from './src/server/entities/BasketballHoopEntity';
+
+// Disable model optimization for local development (speeds up server startup)
+// Re-enable for production builds by setting HYTOPIA_DISABLE_MODEL_OPTIMIZE=0
+if (process.env.HYTOPIA_DISABLE_MODEL_OPTIMIZE !== '0') {
+  console.log('⚡ Model optimization disabled for faster local development');
+  ModelRegistry.instance.optimize = false;
+}
 
 // Player data tracking
 type PlayerData = {
@@ -163,7 +172,26 @@ startServer(world => {
   });
 
   const basketballLogic = new BasketballLogic(getPlayerStats);
-  const uiMessageHandler = new UiMessageHandler(challengeSystem, basketballLogic);
+  const uiMessageHandler = new UiMessageHandler(challengeSystem, basketballLogic, world);
+
+  // Spawn basketball hoops from zones configuration
+  console.log('Setting up basketball hoops...');
+  for (const zone of zonesConfig.zones) {
+    const fields = (zone as any).sportsFields || [];
+    for (const field of fields) {
+      if (field.sport === 'basketball' && field.hoops) {
+        for (const hoopConfig of field.hoops) {
+          const hoop = new BasketballHoopEntity();
+          hoop.spawn(world, hoopConfig.position);
+
+          // Create visual rim blocks
+          hoop.createRimBlocks(world);
+
+          console.log(`  ✅ Spawned basketball hoop at (${hoopConfig.position.x}, ${hoopConfig.position.y}, ${hoopConfig.position.z})`);
+        }
+      }
+    }
+  }
 
   // Set up world tick for challenge system and trigger updates
   let lastTime = Date.now();
@@ -240,6 +268,9 @@ startServer(world => {
     // Clean up trigger system
     triggerSystem.cleanupPlayer(player.id);
 
+    // Clean up basketball balls
+    uiMessageHandler.cleanupPlayer(player.id);
+
     // Note: We keep player data in memory for now (in production, save to database)
     const playerData = playerDataMap.get(player.id);
     if (playerData) {
@@ -261,7 +292,7 @@ startServer(world => {
 
   // Ambient music
   new Audio({
-    uri: 'audio/music/hytopia-main.mp3',
+    uri: 'audio/music/hytopia-main-theme.mp3',
     loop: true,
     volume: 0.1,
   }).play(world);

@@ -21,8 +21,23 @@ npm install
 # Generate the map from zones.json
 npm run generate-map
 
-# Start the server
+# Start the server (model optimization disabled by default for faster startup)
 npm run dev
 ```
 
 The server will spawn players at the central hub plaza and you can explore the basketball court district.
+
+### Model Optimization
+
+By default, model optimization is **disabled** for faster local development. The server will start much faster.
+
+To **enable** optimization (for production):
+```bash
+export HYTOPIA_DISABLE_MODEL_OPTIMIZE=0
+npm run dev
+```
+
+Or create a `.env` file:
+```bash
+HYTOPIA_DISABLE_MODEL_OPTIMIZE=0
+```
